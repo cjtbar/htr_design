@@ -1,119 +1,425 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <base href="{{URL::asset('/')}}" target="_top">
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
-    {{{ URL::asset('css/bootstrap.min.css')}}}"
-    <link rel="stylesheet" href="{{{ URL::asset('assets/css/bootstrap.css)}}}">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="{{{ URL::asset('assets/css/all.css)}}}">
+    <link rel="stylesheet" href="assets/css/all.css">
     <!-- custom CSS -->
-    <link rel="stylesheet" href="{{{ URL::asset('assets/css/style.css)}}}">
-    <title>Hello, world!</title>
-  </head>
-  <body>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>HackTheRat.org</title>
+</head>
+
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
-          <ul class="navbar-nav ml-auto text-center">
-              <li class="nav-item active">
-                  <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-              </li>
-          </ul>
-      </div>
-      <div class="mx-auto my-2 order-0 order-md-1 position-relative">
-          <a class="mx-auto" href="#">
-              <img src="assets/img/logo.png" class="rounded-circle logo">
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-      </div>
-      <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
-          <ul class="navbar-nav mr-auto text-center">
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-              </li>
-          </ul>
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <button type="button" class="btn btn-success">Login</button>
-            </li>
-        </ul>
-      </div>
-  </nav>
+    <!-- =========================================================== -->
+    <!-- ======================  NAV  ============================== -->
+    <!-- =========================================================== -->
 
-  <div class="jumbotron jumbotron-fluid mt-5 jumbotron-background">
-    <div class="container text-center p-5">
-      <img src="assets/img/header.png" />
-      <h1 class="h2">Do you want to learn how to hack?</h1>
-      <p class="lead">Want to learn how to crack??</p>
-      <p class="">Wanna learn how to code?</p>
-      <p><a class="btn btn-info btn-lg mt-1" href="http://www.quackit.com/bootstrap/bootstrap_4/tutorial/bootstrap_jumbotron.cfm" role="button">Call to Action Button</a></p>
+    <section class="nav" id="nav">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
+                <ul class="navbar-nav ml-auto text-center">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="About HackTheRat.org">[ ABOUT ]</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="Statistics">[ STATS ]</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="Frequently asked questions">[ FAQ ]</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="mx-auto my-2 order-0 order-md-1 position-relative">
+                <button type="button" class="btn-logo mx-auto" href="#mainModal" role="button" data-toggle="modal" data-target="#mainModal">
+                  <img src="assets/img/logo.png" class="rounded-circle logo" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
+            <ul class="navbar-nav mr-auto text-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="HackTheRat Message Board">[ FORUMS ]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="HackTheRat Internet Relay Chat Server">[ IRC ]</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="Hall of Fame">[ HOF ]</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <div class="dropleft">
+                        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Login
+                        </button>
+                        <div class="dropdown-menu">
+                            <form class="px-4 py-3">
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input type="text" class="form-control" id="username" placeholder="username" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Password" />
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                    <label class="form-check-label" for="dropdownCheck">
+                                        Remember me
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Sign in</button>
+                            </form>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">New around here? Sign up</a>
+                            <a class="dropdown-item" href="#">Forgot password?</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</section>
+
+<!-- =========================================================== -->
+<!-- ======================  MAIN  ============================= -->
+<!-- =========================================================== -->
+
+<section class="main" id="main">
+    <div class="jumbotron jumbotron-fluid mt-5 jumbotron-background">
+        <div class="container text-center p-5">
+            <img src="assets/img/header.png" />
+            <h1 class="h2">Ever wanted to learn how to hack, crack, or code?</h1>
+            <a class="btn btn-jumbo btn-lg mt-1 door" href="#" role="button">
+                <i class="fa fa-door-closed door-closed"></i> 
+                <i class="fa fa-door-open door-open"></i>
+                Click here to JOIN NOW!
+            </a>
+        </div>
     </div>
-  </div> 
+</section>
 
+<!-- =========================================================== -->
+<!-- ======================  ABOUT  ============================ -->
+<!-- =========================================================== -->
 
-
-  <section id="details" class="details text-center">
+<section id="about" class="text-center">
     <div class="container">
-        <h2 class="m-5 h3">Discover Possibilities With Us</h2>
+        <h2 class="m-5 h2 text-light h2-header">[ABOUT]</h2>
         <div class="row m-5">
-          <div class="col-xs-12 col-md-4">
-            <h3 class="text-info">Banking Services</h3>
-            <i class="fa fa-bar-chart fa-5x text-info mt-3 mb-4" aria-hidden="true"></i>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ipsam, impedit est fugiat ratione incidunt delectus illo aperiam sunt temporibus!</p>        
-          </div>
-          <div class="col-xs-12 col-md-4">
-            <h3 class="text-info">Consulting Services</h3>
-            <i class="fa fa-comments fa-5x text-info mt-3 mb-4" aria-hidden="true"></i>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum blanditiis omnis distinctio doloribus dolore eum repellendus minus excepturi, quo magni?</p>        
-          </div>
-          <div class="col-xs-12 col-md-4">
-            <h3 class="text-info">Archived Data Access</h3>
-            <i class="fa fa-archive fa-5x text-info mt-3 mb-4" aria-hidden="true"></i>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam quidem ab quo porro quod recusandae perferendis sit doloremque consequatur minus.</p>        
-          </div>
+            <div class="col-lg-12">
+                <div class="card-deck">
+                    <div class="card with-borders">
+                        <div class="card-header">
+                            <i aria-hidden="true" class="fa fa-graduation-cap fa-5x text-info mt-3 mb-4"></i>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Challenges</h4>
+                            <p class="card-text text-justify">
+                            HackTheRat members get access to a series of challenges or "missions" which aims to provide them with a way to learn and practice basic and advanced hacking, cracking, and programming skills, and also aimed at simulating real world attacks in a safe and legal environment.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#!" class="btn btn-primary">Join now to start hacking!</a>
+                        </div>
+                    </div>
+                    <div class="card with-borders">
+                        <div class="card-header">
+                            <i aria-hidden="true" class="fa fa-file-pdf fa-5x text-info mt-3 mb-4"></i>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Articles & Tools</h4>
+                            <p class="card-text text-justify">
+                            HackTheRat members also get access to a plethora library of articles, tutorials, manuals, e-books, software, code, and tools that are available to download freely.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#!" class="btn btn-primary">Join now to start downloading!</a>
+                        </div>
+                    </div>
+                    <div class="card with-borders">
+                        <div class="card-header">
+                            <i aria-hidden="true" class="fa fa-users fa-5x text-info mt-3 mb-4"></i>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Great Community</h4>
+                            <p class="card-text text-justify">
+                            HackTheRat's IRC/Forums are where many members get together and converse with like-minded people to discuss anything from current events to technical issues with programming and Unix-based operating systems.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#!" class="btn btn-primary">Join now to start talking!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-  </section> 
+</section>
+<!-- =========================================================== -->
+<!-- ======================  STATS  ============================ -->
+<!-- =========================================================== -->
+<section class="stats" id="stats">
+    <div class="jumbotron jumbotron-fluid mt-5">
+        <div class="container pt-3 pt-1">
+            <h1 class="h2 mb-5 text-center h2-header">[STATS]</h1>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-aqua"><i class="fa fa-chart-line"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">CPU Traffic</span>
+                            <span class="info-box-number">90<small>%</small></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-green"><i class="fab fa-google-plus"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Likes</span>
+                            <span class="info-box-number">41,410</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix visible-sm-block"></div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-yellow"><i class="fa fa-cart-plus"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Sales</span>
+                            <span class="info-box-number">760</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-red"><i class="fa fa-users"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">New Members</span>
+                            <span class="info-box-number">2,000</span>
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+                <div class="col-lg-12">
+                    <section class="content">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-aqua"><i class="fa fa-envelope"></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Messages</span>
+                                        <span class="info-box-number">1,410</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-green"><i class="fa fa-flag"></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Bookmarks</span>
+                                        <span class="info-box-number">410</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-yellow"><i class="fa fa-file-upload"></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Uploads</span>
+                                        <span class="info-box-number">13,648</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-red"><i class="fa fa-star"></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Likes</span>
+                                        <span class="info-box-number">93,139</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="info-box bg-aqua">
+                                    <span class="info-box-icon"><i class="fa fa-bookmark"></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Bookmarks</span>
+                                        <span class="info-box-number">41,410</span>
+                                        <div class="progress">
+                                            <div class="progress-bar" style="width: 70%"></div>
+                                        </div>
+                                        <span class="progress-description">70% Increase in 30 Days</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="info-box bg-green">
+                                    <span class="info-box-icon"><i class="fa fa-thumbs-up"></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Likes</span>
+                                        <span class="info-box-number">41,410</span>
+                                        <div class="progress">
+                                            <div class="progress-bar" style="width: 70%"></div>
+                                        </div>
+                                        <span class="progress-description">70% Increase in 30 Days</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="info-box bg-yellow">
+                                    <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Events</span>
+                                        <span class="info-box-number">41,410</span>
+                                        <div class="progress">
+                                            <div class="progress-bar" style="width: 70%"></div>
+                                        </div>
+                                        <span class="progress-description">70% Increase in 30 Days</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="info-box bg-red">
+                                    <span class="info-box-icon"><i class="fa fa-comments"></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Comments</span>
+                                        <span class="info-box-number">41,410</span>
+                                        <div class="progress">
+                                            <div class="progress-bar" style="width: 70%"></div>
+                                        </div>
+                                        <span class="progress-description">70% Increase in 30 Days</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-6">
+                                <div class="small-box bg-aqua">
+                                    <div class="inner">
+                                        <h3>150</h3>
+                                        <p>New Orders</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </div>
+                                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-xs-6">
+                                <div class="small-box bg-green">
+                                    <div class="inner">
+                                        <h3>53<sup style="font-size: 20px">%</sup></h3>
+                                        <p>Bounce Rate</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa fa-chart-bar"></i>
+                                    </div>
+                                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-xs-6">
+                                <div class="small-box bg-yellow">
+                                    <div class="inner">
+                                        <h3>44</h3>
+                                        <p>User Registrations</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa fa-user-plus"></i>
+                                    </div>
+                                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-xs-6">
+                                <div class="small-box bg-red">
+                                    <div class="inner">
+                                        <h3>65</h3>
+                                        <p>Unique Visitors</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa fa-chart-pie"></i>
+                                    </div>
+                                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =========================================================== -->
+<!-- ======================  FAQ  ============================== -->
+<!-- =========================================================== -->
 
-  <div class="jumbotron jumbotron-fluid mt-5">
-    <div class="container pt-3 pt-1">
-      <h1 class="h2 mb-5">This is the h1 heading used in the regular jumbotron component.</h1>
-      <div class="row">
-        <div class="col-md-6 pr-5">
-          <p class="lead">Lorem ipsum dolor sit amet.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic quos eos voluptatum nihil architecto, maxime quo quod alias non fugiat, pariatur voluptas repellat aspernatur eligendi quae libero recusandae consequuntur dignissimos, facilis nam minus nemo totam incidunt distinctio optio! Ut harum nihil quisquam porro reprehenderit ipsam labore reiciendis perspiciatis.</p>
+<section class="faq" id="faq">
+    <div class="container-fluid bg-black-50">
+        <div class="row">
+            <div class="col-lg-12 mb-2 text-center text-light">
+                <h2 class="h2 text-center h2-header">[FAQ]</h2>
+            </div>
         </div>
-        <div class="col-md-6 pl-5">
-          <p class="lead">Lorem ipsum dolor.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic quos eos voluptatum nihil architecto, maxime quo quod alias non fugiat, pariatur voluptas repellat aspernatur eligendi quae libero recusandae consequuntur dignissimos, facilis nam minus nemo totam incidunt distinctio optio! Ut harum nihil quisquam porro reprehenderit ipsam labore reiciendis perspiciatis.</p>
+        <div class="row">
+            <div class="col-lg-6">
+                <p class="text-success faq-header">0x0A How do I join HackTheRat.org?</p>
+                <p class="text-light faq-text">In order to join HackTheRat.org, you need to solve a very basic challenge that is presented <a href="/register">here</a>. If you are unable to "hack the register app" then I'd recommend taking a look <a href="https://neilpatel.com/blog/how-to-read-source-code/">here</a>.</p>
+            </div>
+            <div class="col-lg-6">
+                <p class="text-success faq-header">0x0C What happens if I successfully hack into HTR's website?</p>
+                <p class="text-light faq-text">Your username and a quote from you will be posted publicly on the <a href="/hof">Hall of Fame</a> along with a short story of how you hacked us. You will also be rewarded with 10,000 points and a new ranking of "HTR Admin". (Note: You will not be rewarded with actual admin privledges, just the new rank.)</p>
+            </div>
         </div>
-      </div>
-      <p class="text-center"><a class="btn btn-info btn-lg mt-5" href="http://www.quackit.com/bootstrap/bootstrap_4/tutorial/bootstrap_jumbotron.cfm" role="button">Call to Action Button</a></p>
+        <div class="row">
+            <div class="col-lg-6">
+                <p class="text-success faq-header">0x0B I am good with computers but don't know jack about hacking... Where should I begin?</p>
+                <p class="text-light faq-text">Start reading about computers, programming, operating systems, and computer security in general. Check out <a href="/resources">HTR Library</a> where we offer a giant collection of articles, tutorials, tools, manuals and much much more, available <b><u>FREE</u></b> to HTR members. Then you should try and beat the <a href="/missions">challenges</a> or try and pass the exams over at <a href="/exams">HTR Exams</a>. The "missions" are a great tool to help you learn & practice hacking and cracking techniques.</p>
+            </div>
+            <div class="col-lg-6">
+                <p class="text-success faq-header">0x0D What happens after I join HackTheRat?</p>
+                <p class="text-light faq-text">After becoming a member you are presented with a private network (HTB Net) that contains several vulnerable systems. Your goal is to hack each one and after doing so, you are awarded with points that advance you to the hall of fame.</p>
+            </div>
+        </div>
     </div>
-  </div>    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/popper.js"></script>
-    <script src="assets/js/bootstrap.bundle.js"></script>
-  </body>
+</section>
+<!-- Modal -->
+<div class="modal fade" id="mainModal" tabindex="-1" role="dialog" aria-labelledby="mainModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="mainModalTitle">Main Menu</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+    ...
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/popper.js"></script>
+<script src="assets/js/bootstrap.bundle.js"></script>
+<script>
+    $(function () { $('[data-toggle="tooltip"]').tooltip() })
+</script>
+
+</body>
+
 </html>
